@@ -1,0 +1,6 @@
+collapse_id: 'unique-collapse-id'
+collapse_button_text: 'Open me'
+collapse_body: "<p>This is some placeholder content. It's hidden by default and shown when triggered.</p>"
+collapse_horizontal: false
+# collapse_width is required if collapse horizontal is true
+collapse_width: '300px'

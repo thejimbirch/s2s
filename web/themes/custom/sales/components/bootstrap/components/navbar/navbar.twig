@@ -1,0 +1,30 @@
+{% set nav_bar_extra_classes = [
+  'navbar-expand-lg',
+  dark_mode ? 'navbar-dark bg-black' : 'navbar-light bg-light'
+]
+%}
+
+<nav {{ bem('navbar ', [], [], nav_bar_extra_classes) }}>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      {% if logo %}
+        <img src="{{ logo }}" alt="{{ site_name }}">
+      {% endif %}
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-between" id="navbar-menu">
+      {% block menu %}
+        {% include "@bootstrap/components/navbar/_navbar-menu.twig" with {
+          items: menu_items,
+          dark_mode: dark_mode,
+        } %}
+      {% endblock %}
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

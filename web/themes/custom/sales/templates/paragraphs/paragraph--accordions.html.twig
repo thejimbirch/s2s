@@ -1,0 +1,4 @@
+{% if accordions %}
+  {{ attach_library('sales/collapse') }}
+  {% include "@bootstrap/components/accordion/accordion.twig" with accordions %}
+{% endif %}

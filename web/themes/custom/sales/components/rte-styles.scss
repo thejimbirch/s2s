@@ -1,0 +1,12 @@
+// Bootstrap
+@import 'bootstrap/bootstrap';
+
+// sales custom components
+@import 'sales/**/*.scss';
+
+body.cke_editable {
+  width: 100%;
+  max-width: 960px;
+  padding: 30px;
+  color: $white !important;
+}

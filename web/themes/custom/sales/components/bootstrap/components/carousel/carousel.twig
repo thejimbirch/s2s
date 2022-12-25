@@ -1,0 +1,63 @@
+{% set carousel_extra_classes = 
+  [
+    'slide',
+    cross_fade ? 'carousel-fade' : '',
+    dark_variant ? 'carousel-dark' : ''
+  ]
+%}
+<div id="{{ id }}" {{ bem('carousel', modifiers, [], carousel_extra_classes) }} data-bs-ride="carousel">
+  {% if indicators %}
+    <div class="carousel-indicators">
+      {% for item in items %}
+        <button 
+          type="button" 
+          data-bs-target="#{{ id }}" 
+          {% if loop.first %}
+            data-bs-slide-to="0" 
+            class="active" 
+            aria-current="true"
+          {% else %}
+            data-bs-slide-to="{{ loop.index - 1 }}" 
+          {% endif %} 
+          aria-label="Slide {{ loop.index }}"
+        >
+        </button>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <div class="carousel-inner">
+    {% for item in items %}
+      <div 
+        {% if loop.index == 1 %}
+          class="carousel-item active"
+        {% else %}
+          class="carousel-item"
+        {% endif %}
+      >
+        {% if item.image.src %}
+          <img class="d-block w-100" src="{{ item.image.src }}" alt="{{item.image.alt}}">
+        {% endif %}
+        {% if item.caption_headline or item.caption_description %}
+          <div class="carousel-caption d-none d-md-block">
+            {% if item.caption_headline %}
+              <h5>{{ item.caption_headline | raw }}</h5>
+            {% endif %}
+            {% if item.caption_description %}
+              <p>{{ item.caption_description | raw }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+  {% if controls %}
+    <button class="carousel-control-prev" type="button" data-bs-target="#{{ id }}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#{{ id }}" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  {% endif %}
+</div>

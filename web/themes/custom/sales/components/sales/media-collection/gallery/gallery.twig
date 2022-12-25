@@ -1,0 +1,15 @@
+{% set base_class = 'media-collection' %}
+{% set additional_attributes = {
+  class: bem(base_class, [display-mode], [], ['mb-4']),
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  {% block contextual_links %}
+  {% endblock %}
+  {# Gallery Mode #}
+  {% if display_mode == 'carousel' %}
+  {% elseif display_mode == 'gallery' %}
+  {% elseif display_mode == 'masonry' %}
+  {% elseif display_mode == 'tabbed_vertical' %}
+  {% endif %}
+</div>

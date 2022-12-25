@@ -1,0 +1,20 @@
+.connect {
+  &__link {
+    text-decoration: none;
+    color: $link-color;
+    &:hover, &:focus {
+      color: $link-hover-color;
+      .connect__icon {
+        fill: $link-hover-color;
+      }
+    }
+  }
+  &__icon {
+    fill: $link-color;
+    width: 35px;
+    height: 35px;
+  }
+  &__text {
+    margin-left: 0.5em;
+  }
+}

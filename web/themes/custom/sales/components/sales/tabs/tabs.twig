@@ -1,0 +1,30 @@
+{% set base_class = 'tabs-section' %}
+{% set additional_attributes = {
+  class: bem(base_class, [], [], ['mb-4']),
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  {% block contextual_links %}
+  {% endblock %}
+  <ul class="nav nav-tabs {{ alignment }}"  role="tablist">
+    {% for tab in items %}
+      {% set id = tab.title|lower|replace({' ': '-'}) ~ '--' ~ tab.id %}
+      <li class="nav-item" role="presentation">
+        <button class="nav-link {% if loop.first %}active{% endif %} {% if tab.disabled %}disabled{% endif %}" id="{{ tab.title|lower|replace({' ': '-'}) }}-tab" data-bs-toggle="tab" data-bs-target="#{{ id }}" type="button" role="tab" aria-controls="{{ tab.title|lower|replace({' ': '-'}) }}-tab" aria-selected="true">{{ tab.title }}</button>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="tab-content mt-3">
+    {% block tab_content %}
+      {% for tab in items %}
+        {% if tab.content %}
+          {# Set unique id for section #}
+          {% set id = tab.title|lower|replace({' ': '-'}) ~ '--' ~ tab.id %}
+          <div class="tab-pane fade {% if loop.first %} show active {% endif %}" id="{{ id }}" role="tabpanel" aria-labelledby="{{ tab.title|lower|replace({' ': '-'}) }}-tab">
+            {{ tab.content|raw }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endblock %}
+  </div>
+</div>

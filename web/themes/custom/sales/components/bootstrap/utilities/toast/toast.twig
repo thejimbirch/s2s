@@ -1,0 +1,21 @@
+{# Types of postion classes:
+top-0 start-0: top left
+top-0 start-50 translate-middle-x: Top center
+top-0 end-0: Top right
+top-50 start-0 translate-middle-y: Middle left
+top-50 start-50 translate-middle: Middle center
+top-50 end-0 translate-middle-y: Middle right
+bottom-0 start-0: Bottom left
+bottom-0 start-50 translate-middle-x: Bottom center
+bottom-0 end-0: Bottom right #}
+<div class="toast-container {% if position %} position-absolute {{ position }}{% endif %}">
+  <div class="toast {% if show %} show {% endif %}" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">{{ header }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      {{ body }}
+    </div>
+  </div>
+</div>

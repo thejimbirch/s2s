@@ -1,0 +1,33 @@
+
+
+
+{% set additional_attributes = {
+  class: bem('card', card_modifiers, [], ['h-100', 'text-decoration-none', 'text-white', 'card--horizontal']),
+  href: url,
+  target: '_self',
+} %}
+
+<a {{ add_attributes(additional_attributes) }}>
+  <div class="row no-gutters">
+    {% block contextual_links %}
+    {% endblock %}
+    {% if image.src %}
+      <div class="col-md-4">
+        {% block image %}
+            <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
+        {% endblock %}
+      </div>
+    {% endif %}
+    <div class="{% if image.src %}col-md-8{% else %}col{% endif %}">
+      <div class="card-body">
+        <div class="card-title h4">{{ title | raw }}</div>
+        {% if date %}
+          <div class="card-subtitle mb-2">{{ date|raw }}</div>
+        {% endif %}
+        {% if description %}
+          <div class="card-text">{{ description |raw }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</a>

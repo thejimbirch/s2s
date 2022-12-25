@@ -1,0 +1,8 @@
+title: 'Open Modal'
+button_base_class: 'btn'
+button_extra_classes:
+  - btn-primary
+  - -btn-small
+button_extra_attributes:
+  id: 'hello'
+  aria-expanded: 'open'

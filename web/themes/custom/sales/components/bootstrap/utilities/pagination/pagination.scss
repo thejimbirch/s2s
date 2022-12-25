@@ -1,0 +1,46 @@
+$pagination-padding-y: 0.375rem;
+$pagination-padding-x: 0.75rem;
+$pagination-padding-y-sm: 0.25rem;
+$pagination-padding-x-sm: 0.5rem;
+$pagination-padding-y-lg: 0.75rem;
+$pagination-padding-x-lg: 1.5rem;
+
+$pagination-color: lighten($link-color, 5);
+$pagination-bg: darken($dark, 20);
+$pagination-border-width: 0;
+$pagination-border-radius: $border-radius;
+$pagination-margin-start: -$pagination-border-width;
+$pagination-border-color: null;
+
+$pagination-focus-color: $link-hover-color;
+$pagination-focus-bg: $gray-200;
+$pagination-focus-box-shadow: $input-btn-focus-box-shadow;
+$pagination-focus-outline: 0;
+
+$pagination-hover-color: $white;
+$pagination-hover-bg: $dark;
+$pagination-hover-border-color: null;
+
+$pagination-active-color: $component-active-color;
+$pagination-active-bg: $component-active-bg;
+$pagination-active-border-color: null;
+
+$pagination-disabled-color: $gray-600;
+$pagination-disabled-bg: $white;
+$pagination-disabled-border-color: $gray-300;
+
+$pagination-transition: color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out;
+
+$pagination-border-radius-sm: $border-radius-sm;
+$pagination-border-radius-lg: $border-radius-lg;
+
+@import '~bootstrap/scss/pagination';
+
+.pager {
+  .pager__link--next, .pager__link--prev {
+    background-color: darken($dark, 10);
+    border-color: darken($dark, 10);
+  }
+}

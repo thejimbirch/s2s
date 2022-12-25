@@ -1,0 +1,10 @@
+items:
+  - title: Home
+    content: "This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation."
+  - title: Profile
+    content: "This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation"
+  - title: Contact
+    content: "This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of the"
+  - title: Disabled
+    disabled: true
+    content: "This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of the"

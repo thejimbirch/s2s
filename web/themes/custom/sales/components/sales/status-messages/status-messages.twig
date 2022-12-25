@@ -1,0 +1,27 @@
+{% set status_base_class = 'drupal-status' %}
+
+{% for type, messages in message_list %}
+
+  {% if type == 'status' %}
+    {% set alert_class = 'alert-success' %}
+  {% elseif type == 'warning' %}
+    {% set alert_class = 'alert-warning' %}
+  {% elseif type == 'error' %}
+    {% set alert_class = 'alert-danger' %}
+  {% else %}
+    {% set alert_class = 'alert-info' %}
+  {% endif %}
+
+  <div {{ bem(status_base_class, [type], [], ['alert', alert_class, 'alert-dismissible fade show', 'container']) }} role="contentinfo" aria-label="{{ status_headings[type] }}" role="alert">
+    {% if messages|length > 1 %}
+      <ul {{ bem('multiple', [], status_base_class) }}>
+        {% for message in messages %}
+          <li {{ bem('message', [], status_base_class) }}>{{ message | raw }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <span {{ bem('message', [], status_base_class) }}>{{ messages | first | raw }}</span>
+    {% endif %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endfor %}

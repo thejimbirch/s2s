@@ -1,0 +1,21 @@
+{% if jump_menu %}
+  {% embed "@sales/jump-menu/jump-menu.twig" with jump_menu %}
+    {% block contextual_links %}
+      {{ content.contextual_links }}
+    {% endblock %}
+  {% endembed %}
+  {% block body_section %}
+    {% for item in jump_menu.items %}
+      {% if item.body %}
+        {# Set unique id for section #}
+        {% set id = item.title|lower|replace({' ': '-'}) ~ '--' ~ item.id %}
+        {% if item.href and item.href|first|lower == '#' %}
+          {% set id = item.href|slice(1)|lower|replace({' ': '-'}) %}
+        {% endif %}
+        <div class="jump-menu-item" id="{{ id }}">
+          {{ drupal_entity('paragraph', item.id, 'full') }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endblock %}
+{% endif %}

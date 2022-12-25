@@ -1,0 +1,32 @@
+{{ attach_library('sales/carousel') }}
+{% embed "@sales/featured-image/featured-image.twig" %}
+  {% if items|length > 1 %}
+    {% block carousel_items %}
+      {% for item in items %}
+        <div class="carousel-item {% if loop.first %}active{% endif %}">
+          {% set image_uri = item['content']['#media'].field_media_image.entity.fileuri %}
+          {% set image_alt = item['content']['#media'].field_media_image.alt %}
+          {% set image_width = item['content']['#media'].field_media_image.width %}
+          {% set image_height = item['content']['#media'].field_media_image.height %}
+          {% if loop.first %}
+            {{ drupal_image(image_uri, 'featured_image', {loading: 'eager', alt: image_alt, width: image_width, height: image_height}, responsive=true) }}
+          {% else %}
+            {{ drupal_image(image_uri, 'featured_image', {loading: 'lazy', alt: image_alt, width: image_width, height: image_height}, responsive=true) }}
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endblock %}
+  {% else %}
+    {% block featured_item %}
+    {% for item in items %}
+      {% set image_uri = item['content']['#media'].field_media_image.entity.fileuri %}
+      {% set image_alt = item['content']['#media'].field_media_image.alt %}
+      {% if loop.first %}
+        {{ drupal_image(image_uri, 'featured_image', {loading: 'eager', alt: image_alt, width: image_width, height: image_height}, responsive=true) }}
+      {% else %}
+        {{ drupal_image(image_uri, 'featured_image', {loading: 'lazy', alt: image_alt, width: image_width, height: image_height}, responsive=true) }}
+      {% endif %}
+    {% endfor %}
+    {% endblock %}
+  {% endif %}
+{% endembed %}

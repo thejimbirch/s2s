@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme override for Paragraph Card Create.
+ * Create a card (doesn't require existing content).
+ */
+#}
+{% embed "@bootstrap/components/card/card.twig" with card %}
+  {% block contextual_links %}
+    {{ content.contextual_links }}
+  {% endblock %}
+  {% block image %}
+    {% if card.image %}
+      <div class="card-img-top">
+        {{ drupal_image(card.image.uri, 'card', responsive=true) }}
+      </div>
+    {% endif %}
+  {% endblock %}
+{% endembed %}

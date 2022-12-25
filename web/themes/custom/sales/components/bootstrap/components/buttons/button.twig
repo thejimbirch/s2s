@@ -1,0 +1,32 @@
+{#
+/**
+ * Available variables:
+ * - button_content - the content of the button (typically text)
+ * - button variation - Bootstrap button class
+ * - button_size-  Bootstrap button size class
+ * - button_modifiers - Any modifier class
+ * - button_id - unique id
+ * - button_target - Used if the button is a link (default is _blank)
+ * - button_href - button href
+ * Available blocks:
+ * - button_content - used to replace the content of the button with something other than text
+ *   for example: to insert an icon
+ */
+#}
+
+{% set button_base_class = button_base_class|default('btn') %}
+{% set button_variation = variation|default('btn-primary') %}
+{% set button_size = size|default('') %}
+{% set additional_attributes = {
+  class: bem(button_base_class, modifiers, [], [button_variation, button_size , active ? 'active' : ''])
+} %}
+
+{% if url %}
+  <a {% if id %} id="{{ id }}" {% endif %} href="{{ url }}" target="{{ target ? target : '_blank' }}" {{ add_attributes(additional_attributes) }}>
+    {{ title | raw }}
+  </a>
+{% else %}
+  <button {% if id %} id="{{ id }}" {% endif %} {{ add_attributes(additional_attributes) }}>
+    {{ title | raw }}
+  </button>
+{% endif %}

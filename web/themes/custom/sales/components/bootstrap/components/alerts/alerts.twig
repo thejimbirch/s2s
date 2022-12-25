@@ -1,0 +1,27 @@
+{%
+  set alert_classes = [
+    'alert-' ~ alert_type,
+    alert_dismissible ? 'alert-dismissible fade show' : ''
+  ]
+%}
+
+{% set additional_attributes = {
+  class: bem('alert', '', [], alert_classes),
+  role: 'alert'
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  {% if alert_heading %}
+    <h4 class="alert-heading">{{ alert_heading }}</h4>
+  {% endif %}
+  {% if alert_body %}
+    {{ alert_body | raw }}
+  {% endif %}
+  {% if alert_dismissible %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  {% endif %}
+  {% if alert_addition_content %}
+    <hr>
+    <p class="mb-0">{{ alert_addition_content | raw }}</p>
+  {% endif %}
+</div>

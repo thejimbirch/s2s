@@ -1,0 +1,16 @@
+{% if block_data %}
+  {% embed "@sales/block-reference/block-reference.twig" with block_data %}
+    {% block contextual_links %}
+        {{ content.contextual_links }}
+      {% endblock %}
+    {% if block_data.references %}
+      {% block block_references %}
+        {% for id in block_data.references %}
+          <div class="mb-3 block-reference__block block-reference__block--id">
+            {{ drupal_block(id) }}
+          </div>
+        {% endfor %}
+      {% endblock %}
+    {% endif %}
+  {% endembed %}
+{% endif %}

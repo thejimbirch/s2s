@@ -1,0 +1,9 @@
+{% embed "@sales/text-component/text-component.twig" with {
+  heading: content.field_heading[0]['#context']['value'] ? content.field_heading[0]['#context']['value'] : FALSE,
+  description: content.field_description[0] ? content.field_description : FALSE,
+}
+%}
+  {% block contextual_links %}
+    {{ content.contextual_links }}
+  {% endblock %}
+{% endembed %}

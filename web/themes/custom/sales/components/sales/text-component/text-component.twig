@@ -1,0 +1,18 @@
+{% set base_class = 'text-component' %}
+{% set modifiers = modifiers|default([]) %}
+{% set additional_attributes = {
+  class: bem(base_class, modifiers, [], [])
+} %}
+<div {{ add_attributes(additional_attributes) }}>
+  {% block contextual_links %}
+  {% endblock %}
+  {% if heading %}
+    <h2 {{ bem('heading', [], base_class, []) }}>{{ heading | raw }}</h2>
+    <hr />
+  {% endif %}
+  {% if description %}
+    <div {{ bem('description-container', [], base_class) }}>
+      {{ description | raw}}
+    </div>
+  {% endif %}
+</div>

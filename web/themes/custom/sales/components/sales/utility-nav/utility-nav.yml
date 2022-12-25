@@ -1,0 +1,10 @@
+logo: https://via.placeholder.com/150x50
+utility_menu_items:
+  - title: 'Menu Item 1'
+    url: '#'
+  - title: 'Menu Item 2'
+    url: '#'
+  - title: 'Menu Item 3'
+    url: '#'
+  - title: 'Stand Alone menu item'
+    url: '#'

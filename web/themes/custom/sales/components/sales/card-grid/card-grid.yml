@@ -1,0 +1,58 @@
+heading: Card Heading
+description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+links:
+  - title: 'learn more'
+    url: 'https://www.salesbridgett.com/'
+    target: '_blank'
+  - title: 'Buy Now'
+    url: 'https://www.salesbridgett.com/'
+    target: '_blank'
+cards:
+  - title: 'Card title 1'
+    description: 'With supporting text below as a natural lead-in to additional content.'
+    stretched_link: false
+    links:
+      - title: 'learn more'
+        url: 'https://www.salesbridgett.com/'
+        target: '_blank'
+      - title: 'Buy Now'
+        url: 'https://www.salesbridgett.com/'
+        target: '_blank'
+    image:
+      src: https://i.picsum.photos/id/937/536/354.jpg?hmac=tAHZdul8u0CNj1d3zwOPzclcriFQXcdVwga3SdGxHpI
+      alt: 'Great image description'
+    width:
+  - title: 'Card title 2'
+    description: 'With supporting text below as a natural lead-in to additional content.'
+    stretched_link: true
+    links:
+      - title: 'learn more'
+        url: 'https://www.salesbridgett.com/'
+        target: '_blank'
+    image:
+      src: https://i.picsum.photos/id/937/536/354.jpg?hmac=tAHZdul8u0CNj1d3zwOPzclcriFQXcdVwga3SdGxHpI
+      alt: 'Great image description'
+  - title: 'Card title 3'
+    description: 'With supporting text below as a natural lead-in to additional content.'
+    stretched_link: false
+    links:
+      - title: 'learn more'
+        url: 'https://www.salesbridgett.com/'
+        target: '_blank'
+      - title: 'Buy Now'
+        url: 'https://www.salesbridgett.com/'
+        target: '_blank'
+    image:
+      src: https://i.picsum.photos/id/937/536/354.jpg?hmac=tAHZdul8u0CNj1d3zwOPzclcriFQXcdVwga3SdGxHpI
+      alt: 'Great image description'
+    width:
+  - title: 'Card title 4'
+    description: 'With supporting text below as a natural lead-in to additional content.'
+    stretched_link: true
+    links:
+      - title: 'learn more'
+        url: 'https://www.salesbridgett.com/'
+        target: '_blank'
+    image:
+      src: https://i.picsum.photos/id/937/536/354.jpg?hmac=tAHZdul8u0CNj1d3zwOPzclcriFQXcdVwga3SdGxHpI
+      alt: 'Great image description'

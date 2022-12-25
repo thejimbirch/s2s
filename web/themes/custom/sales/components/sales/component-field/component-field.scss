@@ -1,0 +1,8 @@
+.paragraph-component {
+  // Add spacing between components.
+  margin-top: 3rem;
+  // Nested paragraphs
+  .paragraph-component {
+    padding: 0;
+  }
+}

@@ -1,0 +1,8 @@
+{% embed "@sales/card-icon/card-icon.twig" with card_icon %}
+  {% block contextual_links %}
+    {{ content.contextual_links }}
+  {% endblock %}
+  {% block image %}
+    {{ content.field_card_media }}
+  {% endblock %}
+{% endembed %}

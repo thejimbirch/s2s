@@ -1,0 +1,18 @@
+{% for item in items %}
+  {% set modifiers = [
+    loop.index,
+    cycle(['odd', 'even'], loop.index0),
+    item.content['#paragraph'].type.getValue()[0]['target_id']|replace({'_': '-'}),
+    loop.first ? 'first' : 'not-first',
+    loop.last ? 'last' : 'not-last',
+  ]
+  %}
+
+  {% set component_unique_id = item.content['#paragraph'].id.getValue()[0].value %}
+  {% set container_width_class = item.content['#paragraph'].field_container_width.getValue()[0].value ? item.content['#paragraph'].field_container_width.getValue()[0].value : 'container' %}
+  {% embed '@sales/component-field/component-field.twig' %}
+    {% block component %}
+      {{ item.content }}
+    {% endblock %}
+  {% endembed %}
+{% endfor %}

@@ -1,0 +1,12 @@
+title: 'Card title'
+description: '<p>With supporting text below as a natural lead-in to additional content.</p>'
+date:
+stretched_link: false
+links:
+  - title: 'learn more'
+    url: 'https://www.salesbridgett.com/'
+    target: '_blank'
+image:
+  src: https://i.picsum.photos/id/937/536/354.jpg?hmac=tAHZdul8u0CNj1d3zwOPzclcriFQXcdVwga3SdGxHpI
+  alt: 'Great image description'
+url: https://www.salesbridgett.com/'

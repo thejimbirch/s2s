@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme override for Paragraph Card  - Select Existing Content.
+ *
+ */
+#}
+{%
+  set classes = [
+    'h-100'
+  ]
+%}
+{% if content.contextual_links %}
+  <div{{ attributes.addClass(classes) }}>
+    {{ content }}
+  </div>
+{% else %}
+  {{ content }}
+{% endif %}

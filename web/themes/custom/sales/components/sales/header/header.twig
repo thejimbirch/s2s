@@ -1,0 +1,42 @@
+{% set nav_bar_extra_classes = [
+  'navbar-expand-lg',
+]
+%}
+<header role="banner" class="header">
+<div class="container header__wrapper">
+ <a class="navbar-brand navbar-brand--desktop" href="/" aria-label="sales home">
+    {% block site_branding %}
+      Adds SVG File to the Site Branding Block and enable.
+      {# {% include "@sales/site-branding/site-branding.twig" %} #}
+    {% endblock %}
+  </a>
+  <a class="navbar-brand navbar-brand--mobile" href="/" aria-label="sales home">
+    {% include "@sales/site-branding/site-branding.twig" %}
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="navbar-toggler__hamburger-container">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    </button>
+  <nav {{ bem('navbar', [], [], nav_bar_extra_classes) }}>
+      <div class="collapse shadow navbar-collapse justify-content-between" id="navbar-menu">
+        {% block menu %}
+          {% include "@bootstrap/components/navbar/_navbar-menu.twig" with {
+            items: menu_items,
+          } %}
+        {% endblock %}
+        {% block utility_menu %}
+          {% include "@sales/utility-nav/utility-nav.twig" with {
+            items: utility_menu_items,
+          } %}
+        {% endblock %}
+        {% block site_search %}
+          {% include "@sales/site-search/site-search.twig" %}
+        {% endblock %}
+      </div>
+    
+  </nav>
+  </div>
+</header>

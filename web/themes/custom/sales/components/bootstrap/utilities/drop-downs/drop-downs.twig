@@ -1,0 +1,17 @@
+<div class="dropdown">
+
+  {% include "@bootstrap/components/buttons/button-extras.twig" with {
+    "title": title,
+    "button_extra_classes": ['btn-primary', 'dropdown-toggle'],
+    "button_extra_attributes": {
+      "data-bs-toggle": "dropdown",
+      "aria-expanded": "false",
+    }
+  } %}
+
+  <ul class="dropdown-menu" aria-labelledby="{{ title }}">
+    {% for link in links %}
+      <li><a class="dropdown-item" href="{{ link.url }}" target="{{ link.target ? link.target : '_self' }}">{{ link.title }}</a></li>
+    {% endfor %}
+</div>
+

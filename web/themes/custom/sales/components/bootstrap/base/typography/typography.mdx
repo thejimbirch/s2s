@@ -1,0 +1,31 @@
+import { Story, Preview, Source } from '@storybook/addon-docs/blocks';
+
+# Typography Documentation
+
+More information about bootstrap typography can be found in the following: 
+- https://getbootstrap.com/docs/5.0/content/typography/
+- https://getbootstrap.com/docs/5.0/utilities/text/
+
+## Updating Typography Variables
+Typography variables can be changed in **_typography.scss** found in **components/bootstrap/base/typography/_typography.scss**.
+
+The available variables can be found in bootstrap 5 Documentation in two places
+- https://getbootstrap.com/docs/5.0/content/typography/#sass
+- https://getbootstrap.com/docs/5.0/utilities/text/#sass
+
+### Example changing the heading font-family and color:
+
+    $headings-font-family: cursive;
+    $headings-color: purple;
+### Example changing the base font-family:
+
+    $font-family-base: papyrus
+<Preview>
+  <Story id="bootstrap-00-base-typography--headings" />
+</Preview>
+<Preview>
+  <Story id="bootstrap-00-base-typography--text" />
+</Preview>
+<Preview>
+  <Story id="bootstrap-00-base-typography--text" />
+</Preview>

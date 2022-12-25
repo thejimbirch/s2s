@@ -1,0 +1,30 @@
+{% set base_class = 'card-icon' %}
+{% set alignment = alignment|default('left')|lower %}
+{% set additional_attributes = {
+  class: bem(base_class, [alignment], [], ['py-3']),
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  {% block contextual_links %}
+    {{ content.contextual_links }}
+  {% endblock %}
+  <div {{ bem('image', [alignment], base_class) }}>
+    {% block image %}
+      <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy"/>
+    {% endblock %}
+  </div>
+  {% if headline or description %}
+    <div {{ bem('content', [alignment], base_class, ['small']) }}>
+      {% if headline %}
+        <div {{ bem('headline', [alignment], base_class, ['h5']) }}>
+          {{ headline | raw }}
+        </div>
+      {% endif %}
+      {% if description %}
+        <div {{ bem('description', [alignment], base_class) }}>
+          {{ description | raw }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

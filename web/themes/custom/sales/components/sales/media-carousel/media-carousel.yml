@@ -1,0 +1,20 @@
+id: carouselExampleControls
+controls: true
+indicators: true
+cross_fade: false
+items:
+  - image:
+      src: http://placeimg.com/640/480/any/grayscale
+      alt: 'West Gallery'
+    caption_headline: 'Bernard and Barbro Osher Gallery 1'
+    caption_description: 'Experiment with thoughts, feelings, and social behavior.'
+  - image:
+      src: http://placeimg.com/640/480/any/grayscale
+      alt: 'Black Box'
+    caption_headline: 'Black Box'
+    caption_description: 'A place for presenting artwork that inspires and astounds in mysterious and wondrous ways'
+  - image:
+      src: http://placeimg.com/640/480/any/grayscale
+      alt: 'Something Wonderful'
+    caption_headline: 'Something Wonderful'
+    caption_description: 'Short Films Presented by Cinema Arts'

@@ -1,0 +1,5 @@
+alert_type: primary
+alert_dismissible: true
+alert_heading: This is a primary alert—check it out!
+alert_body: '<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>'
+alert_addition_content: '<p>Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>'

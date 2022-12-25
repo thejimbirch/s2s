@@ -1,0 +1,36 @@
+
+{% block header %}
+  {% include "@sales/header/header.twig" with header %}
+{% endblock %}
+<main role="main" id="main-content" class="main-content my-4">
+  <div class="main-content-container {% if side_bar_left and side_bar_right %}main-content-container--side-bar-left-right{% elseif side_bar_left %}main-content-container--has-side-bar-left{% elseif side_bar_right %}main-content-container--has-side-bar-right{% else %}main-content-container--no-side-bars{% endif %}">
+    {% block side_bar_left %}
+      {% if side_bar_left %}
+        <aside class="main-content-container__sidebar main-content-container__sidebar--left" role="complementary">
+          <div style="background: blue; min-height: 50vh;">
+            <p class="text-center">storybook sidebar left content</p>
+          </div>
+        </aside>
+      {% endif %}
+    {% endblock %}
+    {% block content %}
+      <div class="main-content-container__content">
+        <div style="background: pink; min-height: 50vh;">
+          <p class="text-center">storybook main content</p>
+        </div>
+      </div>
+    {% endblock %}
+    {% block side_bar_right %}
+      {% if side_bar_right %}
+        <aside class="main-content-container__sidebar main-content-container__sidebar--right" role="complementary">
+          <div style="background: purple; min-height: 50vh;">
+            <p class="text-center">storybook sidebar right content</p>
+          </div>
+        </aside>
+      {% endif %}
+    {% endblock %}
+  </div>
+</main>
+{% block footer %}
+  {% include "@sales/footer/footer.twig" with footer %}
+{% endblock %}

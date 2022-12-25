@@ -1,0 +1,16 @@
+{
+  "name": "kanopi/sales",
+  "description": "Drupal theme for sales Bridgett",
+  "type": "drupal-custom-theme",
+  "homepage": "https://github.com/kanopi/sales-bridgett",
+  "support": {
+    "issues": "https://github.com/kanopi/sales-bridgett/issues"
+  },
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+      "drupal/components": "^2.1",
+      "drupal/emulsify_twig": "^2.0"
+  }
+}

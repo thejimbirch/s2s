@@ -1,0 +1,27 @@
+{% set base_class = 'masonry-collection' %}
+{% if collection %}
+  {# Masonary display mode #}
+  {% if collection.display_mode == 'masonry' %}
+    {{ attach_library('sales/sales-masonry') }}
+    {% embed "@sales/media-collection/masonry/masonry.twig" with collection %}
+      {% block contextual_links %}
+        {{ content.contextual_links }}
+      {% endblock %}
+      {# Media items #}
+      {% if collection.media_items %}
+        {% block media_items %}
+          <div {{ bem('container', [], base_class, ['row']) }}>
+            {% for media in collection.media_items %}
+              <div {{ bem('item', [], base_class, ['col-sm-6', 'col-lg-4', 'mb-4']) }}>
+                {{ drupal_entity('media', media.id, 'masonry') }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endblock %}
+      {% endif %}
+    {% endembed %}
+  {% endif %}
+  {# Gallery display mode #}
+  {# Carousel display mode #}
+  {# Tab vertical display mode #}
+{% endif %}

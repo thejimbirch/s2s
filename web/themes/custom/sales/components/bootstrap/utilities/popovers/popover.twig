@@ -1,0 +1,15 @@
+<button 
+  type="button" 
+  class="btn btn-secondary" 
+  data-bs-container="body" 
+  data-bs-toggle="popover" 
+  data-bs-placement="{% if popover_placement %}{{ popover_placement }}{% else %}top{% endif %}" 
+  {% if popover_title %}
+    title="{{ popover_title }}"
+  {% endif %}
+  {% if popover_body %}
+    data-bs-content="{{ popover_body }}"
+  {% endif %}
+  >
+  {{ button_text }}
+</button>

@@ -1,0 +1,12 @@
+{%
+  set badge_classes = [
+    'bg-' ~ badge_type,
+    badge_rounded ? 'rounded-pill' : ''
+  ]
+%}
+
+{% set additional_attributes = {
+  class: bem('badge', '', [], badge_classes),
+} %}
+
+<span {{ add_attributes(additional_attributes) }}>{{ badge_title }}</span>
