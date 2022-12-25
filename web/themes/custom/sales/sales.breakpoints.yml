@@ -1,0 +1,16 @@
+# Breakpoints - change based on site need
+sales.small:
+  label: small
+  mediaQuery: 'all'
+sales.small-med:
+  label: small-med
+  mediaQuery: 'all and (min-width: 26em)'
+sales.small-large:
+  label: small-large
+  mediaQuery: 'all and (min-width: 41em)'
+sales.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 48em)'
+sales.large:
+  label: large
+  mediaQuery: 'all and (min-width: 61.25em)'

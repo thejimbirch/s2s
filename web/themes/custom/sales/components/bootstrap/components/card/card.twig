@@ -1,0 +1,38 @@
+
+
+{% set additional_attributes = {
+  class: bem('card', card_modifiers, [], ['h-100 shadow']),
+} %}
+
+<div
+  {{ add_attributes(additional_attributes) }}
+  {% if width %} style="width: {{width}};"{% endif %}
+>
+  {% block contextual_links %}
+  {% endblock %}
+  {% if image.src %}
+    <div class="card-img-top">
+      {% block image %}
+          <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
+      {% endblock %}
+    </div>
+  {% endif %}
+  <div class="card-body">
+    <div class="card-title">{{ title | raw }}</div>
+    {% if date %}
+      <div class="card-subtitle mb-2">{{ date|raw }}</div>
+    {% endif %}
+    {% if description %}
+      <div class="card-text">{{ description |raw }}</div>
+    {% endif %}
+  </div>
+  {% if links %}
+    <div class="card-footer">
+      {% for link in links %}
+        <a href="{{ link.url}}"{% if link.target %}target="{{ link.target }}"{% endif %} class="btn btn-outline-dark{% if stretched_link %} stretched-link{% endif %}" aria-label="{{ link.aria_label ? link.aria_label : link.title }}">
+          {{ link.title }}
+        </a>
+      {% endfor %}
+      </div>
+  {% endif %}
+</div>

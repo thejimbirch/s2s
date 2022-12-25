@@ -1,0 +1,18 @@
+.site-search {
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+  &__submit {
+    padding: 0;
+    &:hover,
+    &:active {
+      color: var(--bs-white);
+      background-color: transparent;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+}

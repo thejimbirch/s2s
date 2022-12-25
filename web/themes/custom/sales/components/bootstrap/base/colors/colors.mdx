@@ -1,0 +1,21 @@
+import { Story, Preview } from '@storybook/addon-docs/blocks';
+
+# Colors Documentation
+The colors are based off of Bootstrap 5 SASS color system. 
+
+More information about bootstrap colors can be found here https://getbootstrap.com/docs/5.0/utilities/colors/
+
+## Updating Colors
+To change the colors navigate to the **_colors.scss** found in **components/bootstrap/base/colors/_colors.scss**.
+
+Each color is assigned a sass vairable that is propergated throughout all the bootstrap components.
+
+The available variables can be found in bootstrap 5 documentation:
+- https://getbootstrap.com/docs/5.0/utilities/colors/#sass
+
+### Example changing the primary color and secondary colors:
+    $primary: #9D5C0D;
+    $secondary: #E5890A;
+<Preview>
+  <Story id="bootstrap-00-base-colors--colors" />
+</Preview>

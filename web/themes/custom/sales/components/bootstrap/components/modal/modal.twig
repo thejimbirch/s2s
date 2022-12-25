@@ -1,0 +1,51 @@
+{% set
+  id = title ? title|replace({' ': '-'})~'-modal' : 'modal-id-808'
+%}
+<!-- Button trigger modal -->
+{% include "@bootstrap/components/buttons/button-extras.twig" with {
+  "title": modal_button_text,
+  "button_extra_classes": ['btn-primary'],
+  "button_extra_attributes": {
+    "data-bs-toggle": "modal",
+    "aria-expanded": "false",
+    "data-bs-target": '#'~id
+  }
+} %}
+
+<!-- Modal -->
+<div class="modal fade" id="{{ id }}" tabindex="-1" aria-labelledby="{{ title }}" aria-hidden="true">
+  <div class="modal-dialog {% if full_screen %}modal-fullscreen{% endif %}">
+    <div class="modal-content">
+      <div class="modal-header">
+        {% if title %}
+          <h5 class="modal-title">{{ title }}</h5>
+        {% endif %}
+        {% include "@bootstrap/components/buttons/button-extras.twig" with {
+          "title": "X",
+          "button_extra_classes": ['modal-header-modal-close'],
+          "button_extra_attributes": {
+            "type": "button",
+            "aria-label": "Close",
+            "data-bs-dismiss": "modal",
+          }
+        } only %}
+      </div>
+      {% if body %}
+        <div class="modal-body">
+          {{ body | raw }}
+        </div>
+      {% endif %}
+      <div class="modal-footer">
+        {% include "@bootstrap/components/buttons/button-extras.twig" with {
+          "title": "Close",
+          "button_extra_classes": ['btn-white'],
+          "button_extra_attributes": {
+            "type": "button",
+            "aria-label": "Close",
+            "data-bs-dismiss": "modal",
+          }
+        } %}
+      </div>
+    </div>
+  </div>
+</div>

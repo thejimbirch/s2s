@@ -1,0 +1,9 @@
+{{ attach_library('sales/sales-lazyload') }}
+{% for item in items %}
+  {% embed "@bootstrap/base/video/video.twig" %}
+    {% block video %}
+      {% set media = item.content|merge({'#attributes': item.content['#attributes']|merge({'loading': 'lazy', 'data-src': item.content['#attributes']['src'], 'class':item.content['#attributes']['class']|merge(['lozad', 'placeholder', 'placeholder-glow'])})|filter((v, k) => k != 'src') }) %}
+      {{ media }}
+    {% endblock %}
+  {% endembed %}
+{% endfor %}

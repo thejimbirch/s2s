@@ -1,0 +1,109 @@
+// Everything below this line is for the custom mailing list form
+.footer-signup-block #dvFastForms .ff-group-row,
+.footer-signup-block .ff-form-main {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0);
+  margin: 0;
+  padding: 0;
+}
+
+.footer-signup-block .ff-page-row.page-1 {
+  min-width: 500px;
+  max-width: 85%;
+  @media (max-width: 1199.98px) {
+    min-width: 350px;
+  }
+  @media (max-width: 767.98px) {
+    min-width: 250px;
+  }
+}
+
+.footer-signup-block #dvFastForms .ff-label-col {
+  display: none;
+}
+
+.footer-signup-block #dvFastForms .ff-col-2.ff-field-col {
+  position: relative;
+  height: 39px;
+  width: 100%;
+  color: #b1afaf;
+}
+
+.footer-signup-block #dvFastForms .ff-type-text,
+.footer-signup-block #dvFastForms .ff-textarea,
+.footer-signup-block #dvFastForms select.ff-select-type,
+.footer-signup-block #dvFastForms .ff-fileupload-drop-area,
+.footer-signup-block #dvFastForms .select2-container .select2-choice,
+.footer-signup-block #dvFastForms .select2-container .select2-choices {
+  background-color: transparent;
+  border-color: #706e6e;
+}
+
+.footer-signup-block .ff-group-row > .ff-item-row:first-child {
+  display: none;
+}
+
+.footer-signup-block .ff-item-row {
+  padding-top: 0;
+}
+
+.footer-signup-block #dvFastForms .ff-footer-group {
+  padding: 0;
+  border: solid 1px;
+  border-color: #706e6e;
+}
+
+.footer-signup-block #dvFastForms .ff-submit-btn {
+  margin: 0 !important;
+  height: 37px;
+  background: transparent;
+}
+
+.footer-signup-block #dvFastForms .btnDiv input {
+  margin-left: 0;
+  background: transparent;
+}
+
+.footer-signup-block #dvFastForms .btnDiv {
+  text-align: left;
+}
+
+.footer-signup-block #dvFastForms .ff-btn-submit:hover {
+  background-color: #111;
+  color: #777;
+}
+
+.footer-signup-block #dvFastForms .ff-btn-submit {
+  padding: 0.57rem 1rem;
+}
+
+.footer-signup-block
+  #dvFastForms
+  .ff-item-row
+  .ff-type-text:not(.ff-creditcard),
+.footer-signup-block #dvFastForms .ff-textarea,
+.footer-signup-block #dvFastForms .ff-fileupload-drop-area {
+  width: 100%;
+}
+
+.footer-signup-block
+  #dvFastForms
+  .ff-group-row
+  > .ff-item-row:not(:first-child),
+.footer-signup-block #dvFastForms .ff-payment-wrapper,
+.footer-signup-block #dvFastForms .ff-esignature-wrapper {
+  max-width: 100%;
+}
+
+.footer-signup-block .footnoteDiv {
+  display: none;
+}
+
+.footer-signup-block #dvFastForms .ff-invalid-msg {
+  position: absolute;
+  bottom: 24px;
+  color: white;
+  padding: 4px 30px 0 10px;
+  background-color: rgba(150, 0, 8, 1);
+}

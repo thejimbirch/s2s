@@ -1,0 +1,8 @@
+title: 'Learn More'
+variation: 'btn-primary'
+size:
+  - btn-small
+modifiers:
+id:
+target: '_blank'
+url: 'https://www.salesbridgett.com/'

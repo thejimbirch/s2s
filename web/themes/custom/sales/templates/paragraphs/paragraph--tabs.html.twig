@@ -1,0 +1,19 @@
+{% if tabs %}
+{{ attach_library('sales/sales-tabs') }}
+  {% embed "@sales/tabs/tabs.twig" with tabs %}
+    {% block contextual_links %}
+      {{ content.contextual_links }}
+    {% endblock %}
+    {% block tab_content %}
+      {% for tab in tabs.items %}
+        {% if tab.content %}
+          {# Set unique id for section #}
+          {% set id = tab.title|lower|replace({' ': '-'}) ~ '--' ~ tab.id %}
+          <div class="tab-pane fade {% if loop.first %} show active {% endif %}" id="{{ id }}" role="tabpanel" aria-labelledby="{{ tab.title|lower|replace({' ': '-'}) }}-tab">
+            {{ drupal_entity('paragraph', tab.id, 'full') }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endblock %}
+  {% endembed %}
+{% endif %}

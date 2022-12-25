@@ -1,0 +1,26 @@
+{% set base_class = 'connect' %}
+{% set additional_attributes = {
+  class: bem(base_class, [], [], ['mb-4']),
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  {% block contextual_links %}
+    {{ content.contextual_links }}
+  {% endblock %}
+
+  {% if type == 'email' %}
+    {% set href = 'mailto:' ~ link %}
+  {% else %}
+    {% set href = link %}
+  {% endif %}
+  <a {{ bem('link', [], base_class) }} href="{{ href }}" target="_blank">
+    {% include "@sales/icons/_icons.twig" with {
+      icon_name: type,
+      icon_base_class: 'connect__icon',
+      icon_modifiers: type,
+    } %}
+    {% if text %}
+      <span {{ bem('text', [], base_class) }}>{{ text|raw }}</span>
+    {% endif %}
+  </a>
+</div>

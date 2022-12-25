@@ -1,0 +1,7 @@
+{% for item in items %}
+  {% embed "@bootstrap/base/video/video.twig" %}
+    {% block video %}
+      {{ item.content }}
+    {% endblock %}
+  {% endembed %}
+{% endfor %}

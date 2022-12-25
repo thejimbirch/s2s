@@ -1,0 +1,16 @@
+colors_heading: 'Palettes:'
+palettes:
+  - palette_heading: 'Bootstrap Colors'
+    colors:
+      - name: 'Primary'
+      - name: 'Secondary'
+      - name: 'Success'
+      - name: 'Info'
+      - name: 'Warning'
+      - name: 'Danger'
+      - name: 'Light'
+      - name: 'Dark'
+      - name: 'white'
+      - name: 'black'
+      - name: 'teal'
+      - name: 'gray-dark'

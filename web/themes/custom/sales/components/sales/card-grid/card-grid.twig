@@ -1,0 +1,32 @@
+<div class="cards-grid">
+  {# Heading #}
+  {% if heading %}
+    <h2>{{ heading | raw }}</h2>
+  {% endif %}
+  {# Description #}
+  {% if description %}
+    <div>{{ description | raw }}</div>
+  {% endif %}
+  {# Cards #}
+  <div class="mt-3 mb-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-2 g-md-4 g-lg-3">
+      {% block cards %}
+        {% for card in cards %}
+          <div class="col">
+            {% include "@bootstrap/components/card/card.twig" with card %}
+          </div>
+        {% endfor %}
+      {% endblock %}
+    </div>
+  </div>
+  {# CTAS #}
+  {% if links %}
+    <div class="d-flex justify-content-center m-3">
+      {% for link in links %}
+        <div class="p-3">
+          {% include "@bootstrap/components/buttons/button.twig" with link %}
+        </div>
+      {% endfor %}
+      </div>
+  {% endif %}
+</div>

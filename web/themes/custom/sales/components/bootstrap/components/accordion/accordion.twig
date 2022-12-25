@@ -1,0 +1,38 @@
+<div class="accordion {% if flush %}accordion-flush{% endif %}" id="accordionPanelsStayOpenExample">
+  {% for accordion in items %}
+    {% set unique_name = accordion.title|lower|replace({' ': '-'}) ~ '--' ~ accordion.id %}
+    <div class="accordion-item">
+      <h2
+        class="accordion-header"
+        id="{{unique_name}}"
+      >
+        <button
+          class="accordion-button {% if not accordion.always_open %}collapsed{% endif %}"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-{{unique_name}}"
+          aria-expanded="true"
+          aria-controls="panelsStayOpen-{{unique_name}}"
+        >
+          {{ accordion.title | raw }}
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-{{unique_name}}"
+        class="accordion-collapse collapse {% if accordion.always_open %}show{% endif %}"
+        aria-labelledby="panelsStayOpen-{{unique_name}}"
+      >
+        <div class="accordion-body">
+          {% if accordion.body_story_book %}
+            {{ accordion.body_story_book | raw }}
+          {% else %}
+            {# Render dupal #}
+            {% if accordion.id %}
+              {{ drupal_entity('paragraph', accordion.id, 'full') }}
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

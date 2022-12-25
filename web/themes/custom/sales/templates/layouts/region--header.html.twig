@@ -1,0 +1,17 @@
+{# Header #}
+{{ attach_library('sales/dropdowns')}}
+{{ attach_library('sales/collapse')}}
+{{ attach_library('sales/sales-header')}}
+{% embed "@sales/header/header.twig" with {
+} %}
+  {% block site_branding %}
+    {% include "@sales/site-branding/site-branding.twig" %}
+  {% endblock %}
+  {% block menu %}
+    {{ drupal_entity('block', 'mainnavigation') }}
+  {% endblock %}
+  {% block site_search %}
+    {{ drupal_entity('block', 'searchblock') }}
+  {% endblock %}
+{% endembed %}
+{{ drupal_entity('block', 'breadcrumbs') }}

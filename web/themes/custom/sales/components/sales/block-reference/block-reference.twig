@@ -1,0 +1,20 @@
+{% set base_class = 'block-reference' %}
+{% set additional_attributes = {
+  class: bem(base_class, [], [], ['py-3']),
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  {% block contextual_links %}
+  {% endblock %}
+  {% if heading %}
+    <h2 {{ bem('heading', [], base_class) }}>
+      {{ heading | raw }}
+    </h2>
+  {% endif %}
+  {% if references %}
+    <div {{ bem('references', [], base_class) }}>
+      {% block block_references %}
+      {% endblock %}
+    </div>
+  {% endif %}
+</div>

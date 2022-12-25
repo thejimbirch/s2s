@@ -1,0 +1,67 @@
+# Global
+global:
+  css:
+    theme:
+      dist/css/global.css: { preprocess: false, minified: false }
+
+##################################
+# Bootstrap Component Libraries ##
+##################################
+# Alerts
+alerts:
+  js:
+    dist/js/bootstrap/components/alerts/alerts.js: { preprocess: false, attributes: { defer: true }  }
+# Carousel
+carousel:
+  js:
+    dist/js/bootstrap/components/carousel/carousel.js: { preprocess: false, attributes: { defer: true }  }
+# Collapse
+collapse:
+  js:
+    dist/js/bootstrap/components/collapse/collapse.js: { preprocess: false, attributes: { defer: true }  }
+# Modal
+modal:
+  js:
+    dist/js/bootstrap/components/modal/modal.js: { preprocess: false, attributes: { defer: true }  }
+# OffCanvas
+offcanvas:
+  js:
+    dist/js/bootstrap/components/offcanvas/offcanvas.js: { preprocess: false, attributes: { defer: true }  }
+
+##################################
+#  Bootstrap Utility Libraries  ##
+##################################
+# Tooltips
+tooltips:
+  js:
+    dist/js/bootstrap/utilities/tooltips/tooltips.js: { preprocess: false, attributes: { defer: true }  }
+# Popovers
+popovers:
+  js:
+    dist/js/bootstrap/utilities/popovers/popover.js: { preprocess: false, attributes: { defer: true }  }
+# DropDowns
+dropdowns:
+  js:
+    dist/js/bootstrap/utilities/drop-downs/drop-downs.js: { preprocess: false, attributes: { defer: true }  }
+# Toast
+toast:
+  js:
+    dist/js/bootstrap/utilities/drop-downs/toast.js: { preprocess: false, attributes: { defer: true }  }
+
+######################################
+# sales Component Libraries ##
+######################################
+sales-header:
+  js:
+    dist/js/sales/header/header.js: { preprocess: false, attributes: { defer: true }  }
+# Lazyload
+sales-lazyload:
+  js:
+    dist/js/sales/lazyload/lazyload.js: { preprocess: false, attributes: { defer: true } }
+# Tabs
+sales-tabs:
+  js:
+    dist/js/sales/tabs/tabs.js: { preprocess: false, attributes: { defer: true } }
+sales-masonry:
+  js:
+    dist/js/sales/media-collection/masonry/masonry.js: { preprocess: false, attributes: { defer: true } }

@@ -1,0 +1,6 @@
+{% set base_class = 'paragraph-component' %}
+{% set modifiers = modifiers|default([]) %}
+<div {% if component_unique_id %} id="paragraph-component-{{ component_unique_id }}" {% endif %} {{ bem(base_class, modifiers, [], [container_width_class]) }}>
+  {% block component %}
+  {% endblock %}
+</div>

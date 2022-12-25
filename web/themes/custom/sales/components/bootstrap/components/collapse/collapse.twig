@@ -1,0 +1,16 @@
+
+{% include "@bootstrap/components/buttons/button-extras.twig" with {
+  "title": collapse_button_text,
+  "button_extra_classes": ['btn-primary'],
+  "button_extra_attributes": {
+    "data-bs-toggle": "collapse",
+    "aria-expanded": "false",
+    "data-bs-target": '#'~collapse_id
+  }
+} %}
+
+<div class="collapse {% if collapse_horizontal %} collapse-horizontal {% endif %} mt-3" id="{{ collapse_id }}">
+  <div class="collapse-body border border-light p-3" {% if collapse_horizontal %} {% if collapse_width %}style="width: {{collapse_width}};"{% else %}style="width: 300px;"{% endif %}{% endif %}>
+    {{ collapse_body | raw }}
+  </div>
+</div>

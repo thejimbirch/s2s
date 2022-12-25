@@ -1,0 +1,9 @@
+
+{% set button_base_class = button_base_class|default('btn') %}
+{% set additional_attributes = button_extra_attributes %}
+
+<button {{ add_attributes(additional_attributes) }} {{ bem(button_base_class, modifiers, [], button_extra_classes) }}>
+  {% if title %}
+    {{ title }}
+  {% endif %}
+</button>

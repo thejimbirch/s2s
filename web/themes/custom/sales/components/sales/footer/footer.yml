@@ -1,0 +1,39 @@
+footer_copyright: '<p>2021 sales Bridget, LLP All Rights Reserved</p>'
+footer_signup: '<p>Receive client alerts, updates about case studies and news.</p>'
+footer_cta_links:
+  - title: 'Join Our Mailing List'
+    url: '#'
+footer_menu:
+  - title: 'footer link 1'
+    url: '#'
+  - title: 'footer link 2'
+    url: '#'
+  - title: 'footer link 3'
+    url: '#'
+  - title: 'footer link 4'
+    url: '#'
+footer_social_media_links:
+  - title: 'Facebook'
+    url: '#'
+  - title: 'Twitter'
+    url: '#'
+  - title: 'LinkedIn'
+    url: '#'
+footer_mailing_list:
+  mailinglist_body:
+    value: '<p><a href="https://www.salesbridgett.com/about/newsletters">Get at-home activities and learning tools delivered straight to your inbox</a></p>'
+  mailinglist_id: "jsFastForms"
+  mailinglist_source: "https://sfapi.formstack.io/FormEngine/Scripts/Main.js?d=ffbDz1IbTzzNdbhm86CBmk5S0VVAnq5REwPElDADAe2_X3SYVP1nLq3CcUpdloRY"
+  storybook_raw_script: 'Email signup would go here. Does not render in Storybook'
+legal_menu_text: "<p>2021 sales Bridget, LLP All Rights Reserved</p>"
+footer_legal_menu:
+  - title: 'legal CTA link 2'
+    url: '#'
+  - title: 'legal CTA link 3'
+    url: '#'
+  - title: 'legal CTA link 4'
+    url: '#'
+  - title: 'legal CTA link 5'
+    url: '#'
+  - title: 'legal CTA link 6'
+    url: '#'

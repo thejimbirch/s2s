@@ -1,0 +1,17 @@
+title: Default dropdown
+links:
+  - title: Menu item 1
+    url: '#'
+    target: '_self'
+  - title: Menu item 2
+    url: '#'
+    target: '_self'
+  - title: Menu item 3
+    url: '#'
+    target: '_self'
+  - title: Menu item 4
+    url: '#'
+    target: '_self'
+  - title: Menu item 5
+    url: '#'
+    target: '_self'

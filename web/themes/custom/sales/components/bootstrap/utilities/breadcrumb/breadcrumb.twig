@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+<nav aria-label="breadcrumb" class="container mt-3 mb-3">
+  <ol class="breadcrumb">
+    {% for item in breadcrumb %}
+      {% if item.url %}
+        <li class="breadcrumb-item">
+          <a href="{{ item.url }}">{{ item.text }}</a>
+          {% include "@sales/icons/_icons.twig" with {
+            icon_name: 'chevron-right',
+            icon_base_class: 'breadcrumb-item-chevron',
+          } %}
+        </li>
+      {% else %}
+        <li class="breadcrumb-item {{ loop.last ? 'active' : '' }}" {% if loop.last %}aria-current="page"{% endif %}>
+          <span>{{ item.text }}</span>
+          {% if not loop.last %}
+            {% include "@sales/icons/_icons.twig" with {
+              icon_name: 'chevron-right',
+              icon_base_class: 'breadcrumb-item-chevron',
+            } %}
+          {% endif %}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+</nav>

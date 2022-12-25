@@ -1,0 +1,9 @@
+// Bootstrap
+@import 'bootstrap/bootstrap';
+
+// sales custom components
+@import 'sales/**/*.scss';
+
+html {
+  scroll-behavior: smooth;
+}

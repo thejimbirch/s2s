@@ -1,0 +1,10 @@
+items:
+  - image:
+      src: https://www.salesbridgett.com/sites/default/files/styles/banner_image/public/feature_slides/WestGallery_Recollections_DSC_3949_AS.jpg?itok=I7XuMBU0s
+      alt: 'West Gallery'
+  - image:
+      src: https://www.salesbridgett.com/sites/default/files/styles/banner_image/public/feature_slides/black-box_0.jpg?itok=2T5T1rSo
+      alt: 'Black Box'
+  - image:
+      src: https://www.salesbridgett.com/sites/default/files/styles/banner_image_shorter_than_380/public/feature_slides/Something_Wonderful_960x380.jpg?itok=ihEe4wDr
+      alt: 'Something Wonderful'

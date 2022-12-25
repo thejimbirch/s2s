@@ -1,0 +1,59 @@
+<footer class="footer">
+  <div class="footer__container container">
+    <div class="footer__top-row row">
+      <div class="col-md-3 col-sm-12">
+            {% block footer_menu %}
+            {% include "@sales/footer/footer-menu/_footer-menu.twig" with {
+              items: footer_menu,
+            } %}
+          {% endblock %}
+          </div>
+          <div class="col-md-3 col-sm-12">
+          {% block footer_menu %}
+            {% include "@sales/footer/footer-menu/_footer-menu.twig" with {
+              items: footer_menu,
+            } %}
+          {% endblock %}
+        </div>
+        <div class="col-md-3 col-sm-12">
+          {% block footer_legal_menu %}
+            {% include "@sales/footer/footer-legal-menu/_footer-legal-menu.twig" with {
+              items: footer_legal_menu,
+            } %}
+          {% endblock %}
+        </div>
+      <div class="col-md-3 col-sm-12">
+      {% block footer_signup %}
+            {{ footer_signup | raw }}
+          {% endblock %}
+        {% block footer_cta_links %}
+          {% include "@sales/footer/footer-cta-links/_footer-cta-links.twig" with {
+            items: footer_cta_links,
+          } %}
+        {% endblock %}
+      </div>
+    </div>
+    <div class="footer__bottom-row row mt-5">
+      <div class="col-md-4 col-sm-12">
+          <a class="footer__logo mb-md-0 mb-sm-5" href="/" aria-label="sales home">
+            {% block site_branding %}
+              {% include "@sales/site-branding/site-branding.twig" %}
+            {% endblock %}
+          </a>
+        </div>
+        <div class="footer__legal-block col-md-4 col-sm-12">
+        {% block footer_copyright %}
+            {{ footer_copyright | raw }}
+          {% endblock %}
+        </div>
+        <div class="col-md-4 col-sm-12">
+          {% block social_menu %}
+            {% include "@sales/footer/footer-social-media-links/_footer-social-media-links.twig" with {
+              items: footer_social_media_links,
+            } %}
+          {% endblock %}
+        </div>
+      </div>
+    <div>
+  </div>
+</footer>

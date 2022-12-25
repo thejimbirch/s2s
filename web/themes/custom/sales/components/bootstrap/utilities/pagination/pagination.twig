@@ -1,0 +1,54 @@
+{% set pager_base_class = 'pager' %}
+
+{% if items %}
+  <nav {{ bem(pager_base_class) }} role="navigation" aria-label="Results Pagination">
+    <ul {{ bem('items', [], pager_base_class, ['pagination', 'js-pager__items']) }}>
+      {% spaceless %}
+      {# Print previous item if we are not on the first page. #}
+      {% if items.previous %}
+        <li {{ bem('item', ['previous'], pager_base_class, ['page-item']) }}>
+          <a {{ bem('link', ['prev'], pager_base_class, ['page-link']) }} href="{{ items.previous.href }}" title="{{ 'Go to previous page' }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
+            {{ 'Previous' |t }}
+          </a>
+        </li>
+      {% endif %}
+
+      {# Add an ellipsis if there are further previous pages. #}
+      {% if ellipses.previous %}
+        <li {{ bem('item', ['ellipsis'], pager_base_class) }} role="presentation">&hellip;</li>
+      {% endif %}
+
+      {# Now generate the actual pager piece. #}
+      {% for key, item in items.pages %}
+        {% set pager_modifier = [] %}
+        {% set pager_title = 'Go to page ' ~ key %}
+        {% set active_item_class = '' %}
+        {% if current == key %}
+          {% set pager_modifier = pager_modifier|merge(['is-active']) %}
+          {% set active_item_class = 'active' %}
+          {% set pager_title = 'Current Page' %}
+        {% endif %}
+        <li {{ bem('item', pager_modifier, pager_base_class, ['page-item', active_item_class]) }}>
+          <a {{ bem('link', pager_modifier, pager_base_class, ['page-link']) }} href="{{ item.href }}" title="{{ pager_title }}"{{ item.attributes|without('href', 'title') }}>
+            {{- key -}}
+          </a>
+        </li>
+      {% endfor %}
+
+      {# Add an ellipsis if there are further next pages. #}
+      {% if ellipses.next %}
+        <li {{ bem('item', ['ellipsis'], pager_base_class) }} role="presentation">&hellip;</li>
+      {% endif %}
+
+      {# Print next item if we are not on the last page. #}
+      {% if items.next %}
+        <li {{ bem('item', ['previous'], pager_base_class, ['page-item']) }}>
+          <a {{ bem('link', ['next'], pager_base_class, ['page-link']) }} href="{{ items.previous.href }}" title="{{ 'Go to previous page' }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
+            {{ 'Next' |t }}
+          </a>
+        </li>
+      {% endif %}
+      {% endspaceless %}
+    </ul>
+  </nav>
+{% endif %}

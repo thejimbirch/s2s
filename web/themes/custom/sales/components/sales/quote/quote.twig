@@ -1,0 +1,21 @@
+{% set base_class = 'blockquote-section' %}
+{% set additional_attributes = {
+  class: bem(base_class, [alignment], [], ['mb-4']),
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  {% block contextual_links %}
+  {% endblock %}
+  <figure class="text-{{ alignment }} border p-3 bg-white text-black">
+    {% if quote %}
+      <blockquote class="blockquote">
+        {{ quote | raw}}
+      </blockquote>
+    {% endif %}
+    {% if source %}
+      <figcaption class="blockquote-footer text-black">
+        <cite title="Source Title">{{ source }}</cite>
+      </figcaption>
+    {% endif %}
+  </figure>
+</div>

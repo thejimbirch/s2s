@@ -1,0 +1,4 @@
+header: 'Hello World'
+body: 'Hello, world! This is a toast message.'
+position: 'top-0 start-0'
+show: true

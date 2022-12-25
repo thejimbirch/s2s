@@ -1,0 +1,12 @@
+<button 
+  type="button" 
+  class="btn btn-secondary" 
+  data-bs-container="body" 
+  data-bs-toggle="tooltip" 
+  data-bs-placement="{% if tooltip_placement %}{{ tooltip_placement }}{% else %}top{% endif %}" 
+  {% if tooltip_title %}
+    title="{{ tooltip_title }}"
+  {% endif %}
+  >
+  {{ button_text }}
+</button>

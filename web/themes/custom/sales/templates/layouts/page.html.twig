@@ -1,0 +1,26 @@
+{% embed '@sales/templates/page-template.twig' with {
+  side_bar_left: page.sidebar ? true : false,
+  side_bar_right: page.sidebar_right ? true : false,
+} %}
+  {% block header %}
+    {{ page.header }}
+  {% endblock %}
+  {% block side_bar_left %}
+    {% if page.sidebar %}
+      {{ page.sidebar }}
+    {% endif %}
+  {% endblock %}
+  {% block content %}
+    {{ page.content }}
+  {% endblock %}
+  {% block side_bar_right %}
+    {% if page.sidebar_right %}
+      {{ page.sidebar_right }}
+    {% endif %}
+  {% endblock %}
+  {% block footer %}
+    {% if page.footer %}
+      {{ page.footer }}
+    {% endif %}
+  {% endblock %}
+{% endembed %}

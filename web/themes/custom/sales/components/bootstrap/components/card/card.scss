@@ -1,0 +1,55 @@
+// Card Variables.
+$card-spacer-y: $spacer;
+$card-spacer-x: $spacer;
+$card-title-spacer-y: $spacer * 0.5;
+$card-border-width: 0;
+$card-border-radius: 0;
+$card-border-color: 0;
+$card-inner-border-radius: subtract($card-border-radius, $card-border-width);
+$card-cap-padding-y: $card-spacer-y * 0.5;
+$card-cap-padding-x: $card-spacer-x;
+$card-cap-bg: rgba($black, 0.03);
+$card-cap-color: null;
+$card-height: null;
+$card-color: null;
+$card-bg: $white;
+$card-img-overlay-padding: $spacer;
+$card-group-margin: $grid-gutter-width * 0.5;
+
+// Card Component.
+@import '~bootstrap/scss/card';
+
+.card {
+  opacity: 1;
+
+  &-body {
+    padding: 3rem;
+  }
+
+  &--horizontal {
+    min-height: 155px;
+    transform: translateY(0);
+    transition: 0.4s;
+
+    &:hover, &:focus {
+      transform: translateY(-5px);
+      color: $link-hover-color !important;
+
+    }
+  }
+  img {
+    width: 100%;
+    max-width: 100%;
+    min-height: 155px;
+    object-fit: cover;
+  }
+  &-footer {
+    background-color: $white;
+    text-align: center;
+    padding: 0 3.5rem 3.5rem 3.5rem;
+  }
+
+  .card-title {
+    font-size: 2.5rem;
+  }
+}

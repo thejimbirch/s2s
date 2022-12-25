@@ -1,0 +1,20 @@
+// These styles only affect the colors in Storybook.
+.cl-colors {
+  &__color-cards {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 180px);
+  }
+  &__color-card-box {
+    min-height: 120px;
+  }
+  &__color-card-data {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 0.8em;
+    background-color: #FFFFFF;
+    color: #000;
+    border-top: solid 1px #000;
+  }
+}

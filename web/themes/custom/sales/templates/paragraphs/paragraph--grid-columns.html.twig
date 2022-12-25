@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for Paragraph Grid Columns
+ *
+ */
+#}
+{% embed "@sales/columns/columns.twig" with grid %}
+  {% block contextual_links %}
+    {{ content.contextual_links }}
+  {% endblock %}
+  {% block columns %}
+    {% if grid.columns %}
+      {% for column in grid.columns %}
+        <div class="col">
+          {{ drupal_entity('paragraph', column) }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endblock %}
+{% endembed %}

@@ -1,0 +1,65 @@
+// Accodion Variables.
+$accordion-padding-y: 1rem;
+$accordion-padding-x: 0;
+$accordion-color: $black;
+$accordion-bg: $white;
+$accordion-border-width: $border-width;
+$accordion-border-color: $light-grey;
+$accordion-border-radius: $border-radius;
+$accordion-inner-border-radius: subtract(
+  $accordion-border-radius,
+  $accordion-border-width
+);
+
+$accordion-body-padding-y: $accordion-padding-y;
+$accordion-body-padding-x: $accordion-padding-x;
+
+$accordion-button-padding-y: $accordion-padding-y;
+$accordion-button-padding-x: $accordion-padding-x;
+$accordion-button-color: $accordion-color;
+$accordion-button-bg: $white;
+$accordion-transition: $btn-transition, border-radius 0.15s ease;
+$accordion-button-active-bg: $white;
+$accordion-button-active-color: $body-color;
+
+$accordion-icon-width: 1.75rem;
+$accordion-icon-color: $light-grey;
+$accordion-icon-active-color: $accordion-button-active-color;
+$accordion-icon-transition: transform 0.2s ease-in-out;
+$accordion-icon-transform: rotate(-180deg);
+
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+
+// Import Accodion component Styles.
+@import '~bootstrap/scss/accordion';
+
+
+.accordion {
+  max-width: 860px;
+  margin: 0 auto;
+
+  &-item {
+    border-left: none;
+    border-right: none;
+
+    .accordion-button {
+      font-size: 2.5rem;
+    }
+
+    &:first-of-type, &:last-of-type {
+      border-radius: 0 !important;
+
+      .accordion-button {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+        &.collapsed {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
+}

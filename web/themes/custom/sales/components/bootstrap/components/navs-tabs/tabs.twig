@@ -1,0 +1,20 @@
+<nav {{ bem('nav nav-tabs', modifiers, [], extra_classes) }} role="tablist">
+  {% for tab in tabs %}
+    {% set id = tab.id|replace({' ': ''}) %}
+    {% if loop.first %}
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#{{id}}" type="button" role="tab" aria-controls="{{ tab.title }}" aria-selected="true">{{ tab.title }}</button>
+    {% else %}
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#{{id}}" type="button" role="tab" aria-controls="{{ tab.title }}" aria-selected="false">{{ tab.title }}</button>
+    {% endif %}
+  {% endfor %}
+</nav>
+<div class="tab-content">
+  {% for tab in tabs %}
+    {% set id = tab.id|replace({' ': ''}) %}
+    {% if loop.first %}
+      <div class="tab-pane fade show active" id="{{ id }}" role="tabpanel" aria-labelledby="{{ id }}">{{ tab.tab_body | raw }}</div>
+    {% else %}
+      <div class="tab-pane fade" role="tabpanel" id="{{ id }}" aria-labelledby="{{ id }}">{{ tab.tab_body | raw }}</div>
+    {% endif %}
+  {% endfor %}
+</div>

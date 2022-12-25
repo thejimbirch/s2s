@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Theme override for Paragraph Card Grid.
+ *
+ */
+#}
+{% embed "@sales/card-grid/card-grid.twig" with card_grid %}
+  {% block cards %}
+    {% for card_id in card_grid.cards %}
+      <div class="col">
+        {{ drupal_entity('paragraph', card_id) }}
+      </div>
+    {% endfor %}
+  {% endblock %}
+{% endembed %}

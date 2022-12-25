@@ -1,0 +1,24 @@
+{% set base_class = base_class ? base_class : 'masonry-collection' %}
+{% set additional_attributes = {
+  class: bem(base_class, [], [], ['mb-4']),
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  {% block contextual_links %}
+  {% endblock %}
+    {# Heading #}
+  {% if heading %}
+    <h2>{{ heading | raw }}</h2>
+  {% endif %}
+  {% block media_items %}
+    <div {{ bem('container', [], base_class, ['row']) }}>
+      {% for media in media_items %}
+        <div class="masonry-collection__item col-sm-6 col-lg-4 mb-4">
+          <picture>
+            <img src="{{ media.src }}?random={{ loop.index + 1 }}" alt="{{ media.alt }}" loading="lazy">
+          </picture>
+        </div>
+      {% endfor %}
+    </div>
+  {% endblock %}
+</div>

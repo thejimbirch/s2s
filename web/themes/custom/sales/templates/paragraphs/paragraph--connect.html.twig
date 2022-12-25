@@ -1,0 +1,7 @@
+{% if connect %}
+  {% embed "@sales/connect/connect.twig" with connect %}
+    {% block contextual_links %}
+      {{ content.contextual_links }}
+    {% endblock %}
+  {% endembed %}
+{% endif %}

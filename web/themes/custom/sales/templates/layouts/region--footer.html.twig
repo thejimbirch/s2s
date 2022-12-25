@@ -1,0 +1,24 @@
+{% embed "@sales/footer/footer.twig" with {
+} %}
+  {% block site_branding %}
+    {% include "@sales/site-branding/site-branding.twig" %}
+  {% endblock %}
+  {% block footer_cta_links %}
+    {{ drupal_entity('block', 'footercta') }}
+  {% endblock %}
+  {% block footer_adddress %}
+    {{ drupal_entity('block', 'addressblock') }}
+  {% endblock %}
+  {% block footer_menu %}
+    {{ drupal_entity('block', 'footer') }}
+  {% endblock %}
+  {% block mailing_list_block %}
+    {{ drupal_entity('block', 'mailinglistblock') }}
+  {% endblock %}
+  {% block social_menu %}
+    {{ drupal_entity('block', 'socialmenu') }}
+  {% endblock %}
+  {% block footer_legal_menu %}
+    {{ drupal_entity('block', 'legalmenu') }}
+  {% endblock %}
+{% endembed %}

@@ -1,0 +1,30 @@
+{# Set an id variable and remove any whtiespace #}
+{% set id = id|replace({' ': ''}) %}
+{# Button used to trigger off canvas #}
+<button 
+  class="btn btn-primary" 
+  type="button" 
+  data-bs-toggle="offcanvas" 
+  data-bs-target="#{{ id|replace({' ': ''}) }}"
+>
+  {{ button_text }}
+</button>
+{# Off canvas data #}
+<div
+  id="{{ id }}"
+  class="offcanvas {% if offcanvas_placement_class %}{{ offcanvas_placement_class }}{% else %} offcanvas-start{% endif %}" 
+  tabindex="-1" 
+  aria-labelledby="{{ offcanvas_header }}"
+>
+  <div class="offcanvas-header">
+    {% if offcanvas_header %}
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">{{ offcanvas_header | raw }}</h5>
+    {% endif %}
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  {% if offcanvas_body %}
+    <div class="offcanvas-body">
+      {{ offcanvas_body | raw }}
+    </div>
+  {% endif %}
+</div>

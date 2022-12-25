@@ -1,0 +1,35 @@
+@import '~bootstrap/scss/navbar';
+
+ul.utility-nav {
+	list-style: none;
+	padding-left: 0;
+
+	@include media-breakpoint-up(lg) {
+		margin-right: 35px;
+	}
+
+	.nav-link {
+		padding: 0.5rem 0;
+	}
+
+	@media (min-width: 991.99px) {
+		flex-direction: row;
+		display: flex;
+		font-size: 2rem;
+
+	  li:not(:last-of-type) {
+
+	  	a.nav-link {
+	    	display: inline-block;
+	    	color: #5F605C;
+	    	font-weight: 500;
+
+	    	&:after {
+		    	content: "|";
+		    	padding-left: 10px;
+		    	padding-right: 10px;
+		    }
+		  }
+		}
+	}
+}
